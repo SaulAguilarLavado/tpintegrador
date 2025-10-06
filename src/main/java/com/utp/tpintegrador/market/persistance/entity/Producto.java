@@ -2,6 +2,8 @@ package com.utp.tpintegrador.market.persistance.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "productos")
 public class Producto {
@@ -23,8 +25,13 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
-    @Column(name = "estado")
     private Boolean estado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
+    @OneToMany(mappedBy = "producto")
 
     private String getIdProducto(){
         return idProducto;

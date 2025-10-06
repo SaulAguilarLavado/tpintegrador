@@ -2,27 +2,24 @@ package com.utp.tpintegrador.market.persistance.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "clientes")
 public class Cliente {
     @Id
-    @Column(name = "id")
     private String id;
 
-    @Column(name = "nombre")
     private String nombre;
-
-    @Column(name = "apellidos")
     private String apellidos;
-
-    @Column(name = "celular")
     private String celular;
-
-    @Column(name = "direccion")
     private String direccion;
 
     @Column(name = "correo_electronico")
     private String correoElectronico;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compra;
 
     public String getId() {
         return id;
