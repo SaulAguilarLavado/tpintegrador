@@ -1,0 +1,49 @@
+package com.utp.tpintegrador.market.persistance.mapper;
+
+import com.utp.tpintegrador.market.domain.Category;
+import com.utp.tpintegrador.market.persistance.entity.Categoria;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-10-07T09:47:24-0500",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 21.0.8 (Oracle Corporation)"
+)
+@Component
+public class CategoryMapperImpl implements CategoryMapper {
+
+    @Override
+    public Category toCategory(Categoria categoria) {
+        if ( categoria == null ) {
+            return null;
+        }
+
+        Category category = new Category();
+
+        if ( categoria.getIdCategoria() != null ) {
+            category.setCategoryId( categoria.getIdCategoria() );
+        }
+        category.setCategory( categoria.getDescripcion() );
+        if ( categoria.getEstado() != null ) {
+            category.setActive( categoria.getEstado() );
+        }
+
+        return category;
+    }
+
+    @Override
+    public Categoria toCategoria(Category category) {
+        if ( category == null ) {
+            return null;
+        }
+
+        Categoria categoria = new Categoria();
+
+        categoria.setIdCategoria( category.getCategoryId() );
+        categoria.setDescripcion( category.getCategory() );
+        categoria.setEstado( category.isActive() );
+
+        return categoria;
+    }
+}
