@@ -2,15 +2,15 @@ package com.utp.tpintegrador.market.persistance.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "productos")
 public class Producto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
     private String idProducto;
+
     private String nombre;
 
     @Column(name = "id_categoria")
@@ -19,7 +19,7 @@ public class Producto {
     @Column(name = "codigo_barras")
     private String codigoBarras;
 
-    @Column(name = "precio_venta")
+    @Column(name =  "precio_venta")
     private Double precioVenta;
 
     @Column(name = "cantidad_stock")
@@ -27,21 +27,23 @@ public class Producto {
 
     private Boolean estado;
 
+
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
-    @OneToMany(mappedBy = "producto")
 
-    private String getIdProducto(){
+
+
+    public String getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(String idProducto){
-        this.idProducto=idProducto;
+    public void setIdProducto(String idProducto) {
+        this.idProducto = idProducto;
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return nombre;
     }
 
@@ -73,11 +75,27 @@ public class Producto {
         this.precioVenta = precioVenta;
     }
 
+    public Integer getCantidadStock() {
+        return cantidadStock;
+    }
+
+    public void setCantidadStock(Integer cantidadStock) {
+        this.cantidadStock = cantidadStock;
+    }
+
     public Boolean getEstado() {
         return estado;
     }
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

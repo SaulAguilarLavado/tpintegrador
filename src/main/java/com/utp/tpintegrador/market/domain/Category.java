@@ -2,16 +2,22 @@ package com.utp.tpintegrador.market.domain;
 
 public class Category {
 
-    private int categorId;
+
+    private int categoryId;
     private String category;
     private boolean active;
 
-    public int getCategorId() {
-        return categorId;
+
+
+
+
+
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategorId(int categorId) {
-        this.categorId = categorId;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getCategory() {
@@ -29,4 +35,7 @@ public class Category {
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    //FALTO AGREGAR ESTO
+
 }

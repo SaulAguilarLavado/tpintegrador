@@ -3,12 +3,14 @@ package com.utp.tpintegrador.market.persistance.entity;
 import jakarta.persistence.*;
 
 @Embeddable
-public class ComprasProductosPK {
-    @Column(name = "id_compra")
+public class ComprasProductoPK {
+    @Column(name="id_Compra")
     private Integer idCompra;
 
-    @Column(name = "id_producto")
+
+    @Column(name="id_producto")
     private Integer idProducto;
+
 
     public Integer getIdCompra() {
         return idCompra;

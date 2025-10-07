@@ -3,14 +3,17 @@ package com.utp.tpintegrador.market.persistance.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table (name = "compras-productos")
+@Table(name = "compras_productos")
 public class ComprasProducto {
+
+
     @EmbeddedId
-    private ComprasProductosPK id;
+    private ComprasProductoPK id;
 
     private Integer cantidad;
     private Double total;
     private Boolean estado;
+
 
     @ManyToOne
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
@@ -20,11 +23,12 @@ public class ComprasProducto {
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     private Producto producto;
 
-    public ComprasProductosPK getId() {
+
+    public ComprasProductoPK getId() {
         return id;
     }
 
-    public void setId(ComprasProductosPK id) {
+    public void setId(ComprasProductoPK id) {
         this.id = id;
     }
 
