@@ -7,10 +7,8 @@ public class ComprasProductoPK {
     @Column(name="id_Compra")
     private Integer idCompra;
 
-
     @Column(name="id_producto")
     private Integer idProducto;
-
 
     public Integer getIdCompra() {
         return idCompra;

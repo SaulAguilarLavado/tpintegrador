@@ -26,7 +26,6 @@ public class Compra {
 
     private String estado;
 
-
     @ManyToOne
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
